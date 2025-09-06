@@ -1,0 +1,417 @@
+/* ==========================================================================
+   1. FONTS
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* ==========================================================================
+   2. COLOR VARIABLES
+   ========================================================================== */
+:root {
+  --color-bg: #fffdf5;           /* General background */
+  --color-primary: #09243B;      /* Navy Blue (navbar, primary buttons) */
+  --color-secondary: #F57C00;    /* Vibrant Orange (secondary buttons) */
+  --color-accent: #E6E8EB;       /* Light gray (subtle accents) */
+  --color-text: #1A1A1A;         /* Main text color */
+}
+
+/* ==========================================================================
+   3. GLOBAL RESET & BASE
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-bg);
+  background-image: url("../img/background.png");
+  background-repeat: repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+main {
+  flex: 1 0 auto;  /* Push footer to bottom */
+}
+
+/* ==========================================================================
+   4. NAVBAR
+   ========================================================================== */
+.navbar {
+  background-color: var(--color-primary) !important;
+  transition: top 0.3s ease;
+  padding: 1rem 0;
+}
+
+/* Center nav-items vertically */
+.navbar .navbar-nav {
+  align-items: center;
+}
+
+/* Logo variants */
+.site-logo {
+  height: 80px;
+  width: auto;
+  display: block;
+}
+
+/* Brand section */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 1rem;
+}
+
+.navbar-brand span {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Navbar links */
+.nav-link {
+  color: #fff !important;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--color-accent) !important;
+}
+
+/* Align secondary button (logout) */
+.navbar .btn-secondary {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+}
+
+/* ==========================================================================
+   NAVBAR ITEMS VERTICAL ALIGNMENT FIX
+   ========================================================================== */
+/* Make every nav-item a flexbox and center its children */
+.navbar-nav .nav-item {
+  display: flex;
+  align-items: center;
+}
+
+/* Normalize vertical padding on links and buttons inside the navbar */
+.navbar-nav .nav-link,
+.navbar-nav .btn {
+  padding-top:    0.375rem !important;
+  padding-bottom: 0.375rem !important;
+  line-height:    1.5;
+}
+
+/* ==========================================================================
+   5. FOOTER
+   ========================================================================== */
+footer {
+  flex-shrink: 0;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer-logo {
+  height: 120px;
+  width: auto;
+  margin-bottom: 1rem;
+}
+
+footer p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin: 0.4rem 0;
+}
+
+/* ==========================================================================
+   6. HERO SECTION
+   ========================================================================== */
+.hero-section {
+  min-height: 85vh;
+  background: linear-gradient(to bottom right, var(--color-primary), #0d294e) url('assets/img/hero-bg.svg') no-repeat center/cover;
+  padding: 4rem 2rem;
+}
+
+.hero-section h1,
+.hero-section p {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* ==========================================================================
+   7. SECTION TITLES
+   ========================================================================== */
+.section-title {
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: 0.5rem;
+  margin: 1.5rem 0 1rem;
+  color: var(--color-primary);
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   8. CARDS
+   ========================================================================== */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
+  transition: all 0.3s ease;
+  border-left: 5px solid var(--color-secondary);
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* ==========================================================================
+   9. BUTTONS
+   ========================================================================== */
+button,
+.btn {
+  margin-top: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  border-radius: 0.4rem;
+  transition: transform 0.15s ease, filter 0.15s ease;
+  font-weight: 500;
+}
+
+/* Primary button (navy) */
+.btn-primary {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #08132a !important;
+  border-color: #08132a !important;
+}
+
+/* Secondary button (orange) */
+.btn-secondary {
+  background-color: var(--color-secondary) !important;
+  border-color: var(--color-secondary) !important;
+  color: #fff !important;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: #d45300 !important;
+  border-color: #d45300 !important;
+}
+
+/* Accent-style button (light gray) */
+.btn-warning {
+  background-color: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+  color: var(--color-text) !important;
+}
+
+.btn-warning:hover {
+  filter: brightness(0.9);
+}
+
+/* Extra-large button for call-to-action */
+.btn-xl {
+  font-size: 1.5rem;
+  padding: 1.25rem 3rem;
+  border-radius: 0.6rem;
+}
+
+/* ==========================================================================
+   10. FORMS (Login/Register Cards)
+   ========================================================================== */
+.form-card {
+  max-width: 400px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.form-card:hover {
+  transform: none !important;
+}
+
+/* ==========================================================================
+   11. CHAT MODULE STYLING
+   ========================================================================== */
+.chat-history {
+  background: #fafafa;
+  padding: 1rem;
+  border-radius: 8px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.chat-history .text-start p {
+  display: inline-block;
+  background: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem 0.5rem 0.5rem 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.chat-history .text-end p {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem 0.5rem 0 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.active-chats .chat-item {
+  background-color: #e1ffc7;
+  border-radius: 20px;
+  padding: 0.75rem 1rem;
+  transition: background-color 0.2s;
+}
+
+.active-chats .chat-item:hover {
+  background-color: #d4fcb8;
+}
+
+.active-chats .chat-item .chat-info {
+  flex: 1;
+}
+
+.chat-list-item {
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+}
+
+.chat-list-item.active,
+.chat-list-item:hover {
+  background-color: rgba(5, 30, 60, 0.1);
+}
+
+/* ==========================================================================
+   12. THEME VARIATIONS (Dark / Orange Theme)
+   ========================================================================== */
+/* Orange navbar/footer when mentor-theme is active */
+body.mentor-theme .navbar,
+body.mentor-theme footer {
+  background-color: var(--color-secondary) !important;
+}
+
+/* ==========================================================================
+   13. FACULTY BUTTONS (Dashboard)
+   ========================================================================== */
+.btn-faculty {
+  display: inline-block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--color-secondary);
+  background-color: transparent;
+  border: 2px solid var(--color-secondary);
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease,
+              color 0.2s ease,
+              transform 0.15s ease,
+              box-shadow 0.15s ease;
+}
+
+.btn-faculty:hover,
+.btn-faculty:focus {
+  background-color: var(--color-secondary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   14. LOGO VARIANTS
+   ========================================================================== */
+/* Hide inverted logo by default */
+.logo-light {
+  display: none;
+}
+
+/* In dark theme or navbar-dark, swap logos */
+body.mentor-theme .logo-dark,
+.navbar-dark .logo-dark {
+  display: none;
+}
+
+body.mentor-theme .logo-light,
+.navbar-dark .logo-light {
+  display: inline-block;
+}
+
+/* ==========================================================================
+   15. OVERRIDE btn-secondary IN DARK THEME
+   ========================================================================== */
+body.mentor-theme .navbar .btn-secondary,
+.navbar-dark .btn-secondary {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: #fff !important;
+}
+
+body.mentor-theme .navbar .btn-secondary:hover,
+.navbar-dark .btn-secondary:hover {
+  background-color: #08132a !important;
+  border-color: #08132a !important;
+}
+
+/* ==========================================================================
+   16. RATING PAGE
+   ========================================================================== */
+.rating-page {
+  text-align: center;              /* Center all main text */
+}
+.rating-page .star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  font-size: 4rem;                 /* Larger stars */
+  gap: 0.25rem;
+  margin: 1rem 0;
+}
+.rating-page .star-rating input {
+  display: none;
+}
+.rating-page .star-rating label {
+  color: #ccc;
+  cursor: pointer;
+}
+.rating-page .star-rating label:hover,
+.rating-page .star-rating label:hover ~ label,
+.rating-page .star-rating input:checked ~ label {
+  color: #ffc107;                  /* Gold color on hover or selection */
+}
+.rating-page form {
+  margin: 0 auto;                  /* Center the form */
+}
